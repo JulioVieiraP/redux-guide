@@ -8,8 +8,9 @@ import Cart from "../cart/index";
 import * as Styles from "./styles";
 
 // Utilities
-import { loginUser, logoutUser } from "../../redux/user/actions";
+
 import { selectProductsCount } from "../../redux/cart/cart.seletores";
+import { login, logout } from "../../redux/user/slice";
 
 
 function Header() {
@@ -25,11 +26,11 @@ function Header() {
   console.log(currentUser)
 
   const handleLoginClick = () =>{
-    dispatch(loginUser({name: 'Julio', Email: 'Julio@gmail.com'}))
+    dispatch(login({name: 'Julio', Email: 'Julio@gmail.com'}))
   }
 
   const handleLogoutClick = () => {
-    dispatch(logoutUser())
+    dispatch(logout())
   }
 
   const handleCartClick = () => {

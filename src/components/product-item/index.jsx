@@ -6,15 +6,16 @@ import CustomButton from "../custom-button/index";
 // Styles
 import * as Styles from "./styles";
 import { useDispatch } from "react-redux";
+import { addProduct } from "../../redux/cart/slice";
 
 // Utilities
-import { addProductToCard } from "../../redux/cart/actions";
+
 
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch()
   
   const handleProductclick = () =>{
-    dispatch(addProductToCard(product))
+    dispatch(addProduct(product))
   }
 
   return (
